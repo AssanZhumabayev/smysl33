@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import unittest
 
 class BasicInstalltest(unittest.TestCase):
@@ -21,10 +22,25 @@ class BasicInstalltest(unittest.TestCase):
         self.assertIn('Сайт Асана Жумабаева',self.browser.title)
 
     def test_home_page_header(self):
-        # v shapke saita napisano Assan Zhumabayev
-        browser = self.browser.get('http://127.0.0.1:8000')
-        header = browser.find_elements_by_tag_name('h1')[0]
-        self.assertIn('Асан Жумабаев',header)
+        # Открываем страницу
+        self.browser.get('http://127.0.0.1:8000')
+        # Находим элемент с тегом 'h1' (заголовок) на странице
+        header = self.browser.find_element(By.TAG_NAME, 'h1')
+        # Проверяем, содержит ли заголовок ожидаемый текст
+        self.assertIn('Асан Жумабаев', header.text)
+
+    def test_home_page_blog(self):
+        # pod shapkoi raspolozhen bolg so statiami
+        self.browser.get('http://127.0.0.1:8000')
+        article_list = self.browser.find_element(By.CLASS_NAME, 'article-list')
+        self.assertTrue(article_list)
+    def test_home_page_blog_has_articles_look_correct(self):
+        # u kazhdoi stati est' zagolovok i odin abzac s tekstom
+        self.browser.get('http://127.0.0.1:8000')
+        article_title = self.browser.find_element(By.CLASS_NAME, 'article-title')
+        article_summary = self.browser.find_element(By.CLASS_NAME, 'article-summary')
+        self.assertTrue(article_title)
+        self.assertTrue(article_summary)
 
 
 if __name__ == '__main__':
@@ -33,8 +49,6 @@ if __name__ == '__main__':
 # self.fail("Finish the test")
 
 
-# pod shapkoi raspolozhen bolg so statiami
-# u kazhdoi stati est' zagolovok i odin abzac s tekstom
 # Aeman kliknul po zagolovku i u nego otkrylsya stranica s polnym tektom statii
 # prochitav statiu Assan kliknul po tekstu Assanzhumabayev v  shapke stranicy i popal v glavnuiu statiu
 

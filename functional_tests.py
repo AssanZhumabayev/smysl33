@@ -52,3 +52,6 @@ if __name__ == '__main__':
 # Aeman kliknul po zagolovku i u nego otkrylsya stranica s polnym tektom statii
 # prochitav statiu Assan kliknul po tekstu Assanzhumabayev v  shapke stranicy i popal v glavnuiu statiu
 
+
+#
+# nekotorye articles v adminke, no ne opublikovany

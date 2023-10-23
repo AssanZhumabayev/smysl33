@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from blog.models import Article
 from django.http import HttpResponse
 
 def home_page(request):
-    return HttpResponse("<html><title>Сайт Асана Жумабаева</title><h1>Асан Жумабаев</h1></html>")
-
+    articles = Article.objects.all()
+    context = {'articles': articles}
+    return render(request, 'home_page.html', context)

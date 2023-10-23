@@ -42,14 +42,28 @@ class BasicInstalltest(unittest.TestCase):
         self.assertTrue(article_title)
         self.assertTrue(article_summary)
 
+    def test_home_page_article_title_link_leads_to_article_page(self):
+        # Arman kliknul po zagolovku i u nego otkrylsya stranica s polnym tektom statii
+        # open home page
+        self.browser.get('http://127.0.0.1:8000')
+        # search article
+        # search article head
+        article_title = self.browser.find_element(By.CLASS_NAME, 'article-title')
+        article_title_text = article_title.text
+        # seach link into head
+        article_link = article_title.find_element(By.TAG_NAME, 'a')
+        # go into link
+        self.browser.get(article_link.get_attribute('href'))
+        # We expect that there is an article on the page that opens
+        article_page_title = self.browser.find_element(By.CLASS_NAME, 'article-title')
+        self.assertEquals(article_title_text, article_page_title.text)
 
 if __name__ == '__main__':
     unittest.main()
 
 # self.fail("Finish the test")
 
-
-# Aeman kliknul po zagolovku i u nego otkrylsya stranica s polnym tektom statii
+# assan popytalsya otkryr nesushestvuiu statiu, emu otkrilas stranica 404
 # prochitav statiu Assan kliknul po tekstu Assanzhumabayev v  shapke stranicy i popal v glavnuiu statiu
 
 

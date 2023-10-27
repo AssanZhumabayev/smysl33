@@ -27,7 +27,6 @@ class ArticlePageTest(TestCase):
         self.assertIn("full_text 1", html)
 
 
-
 class HomePageTest(TestCase):
 
     def test_home_page_displays_articles(self):
@@ -59,8 +58,6 @@ class HomePageTest(TestCase):
         self.assertIn("summary 2", html)
         self.assertNotIn("full_text 2", html)
 
-
-
     def test_resolves_to_home_page_view(self):
         found = resolve('/')
         self.assertEquals(found.func, home_page)
@@ -74,6 +71,7 @@ class HomePageTest(TestCase):
         self.assertIn("<title>Сайт Асана Жумабаева</title>", html)
         self.assertIn("<h1>Асан Жумабаев</h1>", html)
         self.assertTrue(html.endswith("</html>"))
+
 
 class ArticleModelTest(TestCase):
 
@@ -126,4 +124,3 @@ class ArticleModelTest(TestCase):
             all_articles[0].slug,
             article1.slug
         )
-

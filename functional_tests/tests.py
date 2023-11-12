@@ -4,6 +4,7 @@ from django.test import LiveServerTestCase
 from blog.models import Article
 from datetime import datetime
 import pytz
+import os
 
 
 class BasicInstalltest(LiveServerTestCase):
@@ -15,6 +16,9 @@ class BasicInstalltest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
+        staging_server = os.environ.get('STAGING_SERVER')  
+        if staging_server:
+            self.live_server_url = 'http://' + staging_server
         Article.objects.create(
             title='title 1',
             summary='summary 1',
@@ -39,6 +43,14 @@ class BasicInstalltest(LiveServerTestCase):
         header = self.browser.find_element(By.TAG_NAME, 'h1')
         # Проверяем, содержит ли заголовок ожидаемый текст
         self.assertIn('Асан Жумабаев', header.text)
+
+    def test_layout_and_styling(self):
+        self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
+
+        header = self.browser.find_element(By.TAG_NAME, "h1")
+        self.assertTrue(header.location['x'] > 10
+        )
 
     def test_home_page_blog(self):
         # pod shapkoi raspolozhen bolg so statiami

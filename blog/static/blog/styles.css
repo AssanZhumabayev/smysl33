@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Allura-Regular;
+    src: url('../blog/fonts/Allura-Regular.ttf') format(ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Lobster-regular;
+    src: url('../blog/fonts/Lobster-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: roboto-black;
+    src: url('../blog/fonts/Roboto-Black.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    color: #333;
+    font-family: roboto, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.page-header {
+    height: 7em;
+    margin-left: -20px;
+}
+h1, h2 ,h3 {
+    font-family: Lobster-regular, roboto-black, Helvetica, sans-serif;
+    font-weight: 400;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.3em;
+}
+h4, h5, h6 {
+    font-size: 1em;
+}
+h1.avatar-top {
+    font-size: 1em;
+    margin-top: 2em;
+}
+h1.avatar-top img{
+    width: 32px;
+    margin-right: 2em;
+    border-radius: 50%;
+}
+.article {
+    margin-bottom: 2em;
+}
+h2.article-title {
+    margin-bottom: .2em;
+}
+h2.article-title a {
+    text-decoration: none;
+    color: #333;
+}
+h2.article-title a:hover {
+    color: #676767;
+}

@@ -1,0 +1,37 @@
+---
+
+- hosts: all
+
+  vars:
+      host: "{{ inventory_hostname }}"
+
+  tasks:
+
+    - name: Deadsnakes PPA to get Python 3.11
+      apt_repository:
+        repo='ppa:deadsnakes/ppa'
+        
+    - name: Make sure required packages are installed
+      apt:
+        pkg=nginx,git,python3.11,python3.11-venv 
+        state=present
+
+    # - name: allow long hostnames in nginx
+    #   lineinfile:
+    #     dest=/etc/nginx/nginx.conf
+    #     regexp='(\s+)#? ?server_names_hash_bucket_size'
+    #     backrefs=yes
+    #     line='\1server_names_hash_bucket_size 64;'
+
+    # - name: add nginx config to sites-available
+    #   template: src=./nginx.conf.j2 dest=/etc/nginx/sites-available/{{ host }}
+    #   notify:
+    #       - restart nginx
+
+    # - name: add symlink in nginx sites-enabled
+    #   file:
+    #       src=/etc/nginx/sites-available/{{ host }}
+    #       dest=/etc/nginx/sites-enabled/{{ host }}
+    #       state=link
+    #   notify:
+    #       - restart nginx

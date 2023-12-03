@@ -1,0 +1,23 @@
+create server + setting ssh + pair domen
+install python3.11 + python3.11-venv
+install git, nginx, gunicorn
+download code from github
+create venv
+create database(migration)
+simple nginx in sites-available
+connect the configuration with sites enabled   ---> reload nginx
+setting gunicorn --->reload
+collecting static files
+
+
+DJANGO_DEBUG_FALSE = Y
+DEBUG = FALSE
+ALLOWED_HOST = ['{SITENAME}']
+
+generate and write in the .env SECRET_KEY
+---
+start nginx
+start gunicorn
+
+
+ANSIBLE!!

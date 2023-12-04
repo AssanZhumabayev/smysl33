@@ -32,6 +32,7 @@ else:
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'blog',
     'django.contrib.admin',

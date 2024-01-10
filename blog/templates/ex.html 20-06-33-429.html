@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Приглашение</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Allura&family=Pacifico&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- slider-style-css -->
+    <link rel="stylesheet" href="/slider-style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="d-flex justify-content-center container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container navbar-container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
+                        <li class="nav-item">
+                        <li class="nav-item"><a class="nav-link" href="#schedule">Пригласительный</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#keynote">История</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#location">Локация</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#slider">пожелания</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <!-- main -->
+    <div class="section">
+        <section id="headline" class="container">
+            <div class="row">
+                <div class="assan-akerke"></div>
+                <div class="headline">
+                    <div class="badge">
+                        <span>Свадьба состоится </span>
+                        <span class="date">16.12<br>2023</span>
+                        <span> Ресторан Ханшайым</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- shedule -->
+    <section id="schedule" class="container">
+        <h2>Пригласительное</h2>
+        <div class="wrapper">
+            <div class="columns">
+                <div class="cell">
+                    <div class="mpdiv">
+                        <h3>Дорогие друзья и близкие!</h3>
+                        <p>С большим удовольствием и теплотой в сердцах, мы приглашаем вас разделить с нами волшебный
+                            момент в жизни
+                            наших детей - наша дочь Акерке и Асан решили соединить свои сердца в узах брака.
+                        </p>
+                        <p>
+                            Свадебная церемония состоится 16 декабря 2023 г. в ресторане "Ханшайым" в 18:00. Ваше
+                            присутствие сделает
+                            этот день еще более особенным и исключительным. Пожалуйста, дайте нам знать, сможете ли
+                            посетить данное
+                            мероприятие оставив ваш ответ далее в форме.
+                        </p>
+                        <p>
+                            Мы с нетерпением ждем возможности отпраздновать это радостное событие вместе с вами.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="col-smm-6">
+                        <!-- JS code -->
+                        <script>
+                            function formatPhoneNumber(value) {
+                                // Форматирование номера телефона, например: +XXX (XXX) XXX-XXXX
+                                if (!value) return '';
+
+                                let formattedValue = `+${value.slice(0, 1)}`;
+                                if (value.length > 1) {
+                                    formattedValue += ` (${value.slice(1, 4)}`;
+                                }
+                                if (value.length > 4) {
+                                    formattedValue += `) ${value.slice(4, 7)}`;
+                                }
+                                if (value.length > 7) {
+                                    formattedValue += ` ${value.slice(7, 11)}`;
+                                }
+
+                                return formattedValue;
+                            }
+
+                            function validateForm() {
+                                var variants = document.forms["myForm"]["variants"].value;
+                                var userName = document.forms["myForm"]["user_name"].value;
+                                var userPhone = document.forms["myForm"]["user_phone"].value;
+
+                                // Проверяем, что обязательные поля заполнены
+                                if (variants == "Выберите вариант" || userName == "" || userPhone == "") {
+                                    alert("Пожалуйста, заполните все обязательные поля.");
+                                    return false; // Предотвращаем отправку формы
+                                }
+                            }
+
+
+                        </script>
+                        <!-- JS code end -->
+                        <form name="myForm" action="r-mail.php" method="POST" onsubmit="return validateForm()">
+                            <h3>Форма для заполнения:</h3>
+                            <div class="form-group">
+                                <label for="">Просим ответить сможете ли вы посетить наше мероприятие</label>
+                                <select class="form-select form-select-sm" aria-label="Small select example"
+                                    name="variants">
+                                    <option selected>Выберите вариант</option>
+                                    <option value="Да, с удовольствием">Да, с удовольствием</option>
+                                    <option value="Меня пригласили на другое мероприятие">Меня пригласили на другое
+                                        мероприятие</option>
+                                    <option value="Не знаю, дам ответ позже">Не знаю, дам ответ позже</option>
+                                    <option value="Кто-то один из семьи обязательно придет">Кто-то один из семьи
+                                        обязательно придет</option>
+                                    <option value="К сожалению не смогу">К сожалению не смогу</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Введите ваше имя</label>
+                                <input type="text" class="form-control" id="" name="user_name"
+                                    placeholder="Например, Аслан">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Введите номер телефона</label>
+                                <input type="tel" class="form-control" id="phoneInput" name="user_phone"
+                                    placeholder="+7 (999) 99 99 999">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Просим вас оставить интереcный комментарий <br>или пожелание и мы
+                                    опубликуем на сайте. У нас есть подарок автору лучшего комментария или
+                                    пожелания.</label>
+                                <input type="text" class="form-control" id="" name="user_email"
+                                    placeholder="*Можно пропустить">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+
+                        <script>
+                            const phoneInput = document.getElementById('phoneInput');
+
+                            phoneInput.addEventListener('input', (event) => {
+                                const input = event.target;
+                                const inputValue = input.value.replace(/\D/g, ''); // Удаление всех нецифровых символов
+                                const formattedValue = formatPhoneNumber(inputValue);
+                                input.value = formattedValue;
+                            });
+                            function formatPhoneNumber(value) {
+                                // Форматирование номера телефона, например: +XXX (XXX) XXX-XXXX
+                                if (!value) return '';
+
+                                let formattedValue = `+${value.slice(0, 1)}`;
+                                if (value.length > 1) {
+                                    formattedValue += ` (${value.slice(1, 4)}`;
+                                }
+                                if (value.length > 4) {
+                                    formattedValue += `) ${value.slice(4, 7)}`;
+                                }
+                                if (value.length > 7) {
+                                    formattedValue += ` ${value.slice(7, 11)}`;
+                                }
+
+                                return formattedValue;
+                            }
+                        </script>
+                        <!-- JS code -->
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                        <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+                        <!-- JS code end -->
+                    </div>
+                </div>
+            </div>
+            <h3 class="thanks">С благодарностью и теплотой, Уалихан и Нургуль</h3>
+
+    </section>
+
+    <!-- wishes -->
+    <section id="keynote" class="container">
+        <h2>Наша история</h2>
+        <div class="wrapper">
+            <div class="columns">
+                <div class="cell">
+                    <h1>Акерке</h1>
+                    <p>
+                        В 2020 г., когда объявили о карантине из-за пандемии, мою работу перевели на дистанционный
+                        (онлайн) режим. Я
+                        решила поработать из своего родного города и заодно провести больше времени с родителями,
+                        родными и
+                        друзьями.
+
+                        В качестве досуга я начала посещать интеллектуальные игры и в один из таких дней моя сестра
+                        познакомила меня
+                        со своей коллегой. Мы обменялись номерами, начали посещать игры вместе, помогать и поддерживать
+                        друг друга,
+                        часто встречаться. Я поняла, что мы родственные души и наше общение переросло во что-то большее
+                        чем
+                        просто дружба.
+                    </p>
+                </div>
+                <div class="cell">
+                    <h1>Асан</h1>
+                    <p>Вечером после работы я как обычно собрался на интеллектуальную игру чтобы совместить приятное с
+                        полезным. В
+                        зале уже собрались участники, а за соседним столиком сидела моя коллега со своей компанией.
+                        Среди них мой
+                        взгляд притянуло обаяние одной незнакомки.
+                    </p>
+                    <p>После игры моя коллега познакомила с ней, она оказалась ее
+                        сестрой. Мне казалось, что я знал ее всю жизнь и почувствовал, что эта встреча станет началом
+                        чего-то особенного.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- photo -->
+    <div class="container">
+        <section class="photo row">
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/6.jpeg" alt=""></div>
+            </div>
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/2.jpeg" alt=""></div>
+            </div>
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/4.jpeg" alt=""></div>
+            </div>
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/3.jpeg" alt=""></div>
+            </div>
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/5.jpeg" alt=""></div>
+            </div>
+            <div class="col-4 col-md-2">
+                <div class="block"><img src="images/1.jpeg" alt=""></div>
+            </div>
+    </div>
+
+    <!-- location -->
+    <section id="location" class="container">
+        <h2>Как нас найти?</h2>
+        <div class="artwork">
+            <div class="badge">
+                <p>​Придорожная улица, 67/1а
+                    <br>По шоссе Уральск - Самара возле остановки авторынок Байтерек
+                </p>
+                <p class="links">
+                    <a class="twogis" href="https://2gis.kz/uralsk/geo/70000001038262078" target="_blank">Посмотреть на
+                        .2gis</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- slider -->
+    <section id="slider" class="container">
+        <h2>Ваши пожелания</h2>
+        <div id="carouselExampleCaptions" class="carousel slide"> <!-- data-bs-ride="carousel"> -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+                    aria-label="Slide 10"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="10"
+                    aria-label="Slide 11"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="11"
+                    aria-label="Slide 12"></button>
+            </div>
+
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/008Asel.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Асель</h1>
+                                    <p>Сестра</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Дорогие мои Акерке и Асан👩❤️💋👨! Хочу пожелать Вам безграничного счастья🥰. Любите и дорожите друг другом, идите по жизни много-много лет вместе💞, Сильно держась за руки!🤗 Пусть в семейной жизни будет только свет и солнце.🌞Счастья тебе, моя родная💗, и пусть твоя семейная жизнь будет наполнена радостью и любовью💘! Желаю вам взаимопонимания, финансового благополучия 💰и здоровых красивых детишек🧑🤝🧑👭! Пусть все ваши мечты сбудутся🧿, а каждый миг, проведенный друг с другом, будет по-своему прекрасен! 💞🤗🧚🏻♀️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--  -->
+
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/011Ramina.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Рамина</h1>
+                                    <p>Құрбы</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Дорогие Асан и Акерке! Поздравляю вас с днем вашей свадьбы , пусть этот замечательный день будет наполнен любовью и заботой ваших друзей и близких. А вы всегда будете поддержкой и опорой друг для друга , любите и цените каждый момент. Пусть ваш союз сопровождает удача во всех ваших делах 🧡</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!--  -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/010NZ.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Нурсултан - Жулдыз</h1>
+                                    <p>Друзья</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Бақытты отбасылық өмірге басқан қадамдарыңыз сәтті болсын❤️❤️❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/009Aizhan.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Мирлан - Айжан</h1>
+                                    <p>Сестра</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Бақытты отбасылық өмірге басқан қадамдарыңыз сәтті болсын❤️❤️❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/007YT.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Ержан - Томирис</h1>
+                                    <p>Друзья</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Akerke, you are the best! We are very very happy for you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/006G.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Гульмира</h1>
+                                    <p>Подруга</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Акерке и Асан. Желаю вам долгой и счастливой семейной жизни. Пусть в вашем союзе всегда будет поддержка и уважение друг к другу. Пусть ваш дом будет наполнен любовью, радостью и смехом. Шаңырақтарың биік, босағаларың берік болсын.Махаббаттарың мәңгі болсын!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/005AL.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Алтынай</h1>
+                                    <p>Сестра</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Дорогая, этот день ты будешь вспоминать всю свою жизнь. Я желаю тебе счастливой семейной жизни, полной надежд и новых свершений, целей и планов. И пусть все непременно сбудется. Любите друг друга и цените, будьте всегда друг для друга плечом и опорой. Помните, что отныне вы самые главные люди друг для друга. Я очень Рада что моя любимая самая близкая сестра и мой самый классный друг, бро соединили свои сердца. Когда-то я мечтала о классном жезде с кем могу спокойно сидеть и говорить о всяком. И Аллах услышал меня 😅 Теперь у меня будет самый близкий по душе жездуха. Желаю вам маленьких побольше маленьких Асанчиков 🙌🏼 безумно от всей души люблю вашу семью🤍</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/004D.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Дана</h1>
+                                    <p>Подруга</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Жаник, маленькая моя, шын журектен куттыктаймын! Я знаю, что добрее, внимательнее и заботливей человека, чем ты не найти. Ты достойна большого счастья и большой любви. Я желаю, чтобы для Асана, ты всегда была принцессой👸🏼для которой он построит дворец 🏠к ногам которой он бросит все сокровища мира 💰💵💸и которую всегда будет готов носить на руках 🙌.И даже если с годами появятся лишние килограммы, чтоб для него ты всегда оставалась маленькой принцессой 👼🏻👑👸🏼. Люблю и ценю тебя 😘😘😘</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/003Manas.jpg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Манас</h1>
+                                    <p>Братишка</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Ақерке апа Асан жезде өмірдің жаңа баспалдағына аяқ басқалы тұрсыздар. Осы кезеңде
+                                    кездескен қиындықта
+                                    бір біріңізге тірек болып, әрқашан жанашыр болыңыздар. Ақерке апа (апатай) сіз
+                                    біздің
+                                    әулеттің ең үлкені,
+                                    мақтанышы, жанашыры ғана болып қоймай қамқоршы ақылшы бола білдіңіз. Ең алғаш
+                                    жыраққа
+                                    шығып студент болған
+                                    кезімде әрқашан бағыт көрсетіп, жанымда болдыңыз. Сіздің қасыңызда жүріп қалтамнан
+                                    ақша
+                                    шығарып көрмеппін.
+                                    Бірде Ақерке апа мен төлейінші деп ұрыс жеп алғаным бар. Менің қасымда жүргенде олай
+                                    айтпа, сен өзіңнен
+                                    кішкентайларға дал осылай жасайсың деп. Сізді қатты құрметтейміз, сыйлаймыз, мен
+                                    үшін
+                                    ерекше жансыз.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/gulim.jpeg" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Гулим</h1>
+                                    <p>Невестка</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Ну, начнем с того, что Асану и Вам я желаю всего только самого наилучшего ❤️ А если
+                                    быть
+                                    точнее, то
+                                    счастливой и сбалансированной на события жизни. Абсолютного взаимопонимания,
+                                    взаимоподдержки, ну и
+                                    конечно же, взаимной любви. <br>Жизнь, к сожалению, полна испытаний, и желаю вам
+                                    пройти
+                                    эти испытания
+                                    с гордо поднятой головой, крепко держась за руки. В любой ситуации знать, что у вас
+                                    общие цели и
+                                    желания, какие бы сложности не случались, только поняв друг друга, поставив себя на
+                                    места друг друга,
+                                    оказав максимальную поддержку, нежность и заботу, можно сделать отношения ещё
+                                    крепче.
+                                    <br> Желаю вам
+                                    стать Иншаллах современной семьёй, которые ценят институт семьи, ее смысл и
+                                    значение❤️ Я
+                                    рада, Акерке,
+                                    что Вы встретили очень хорошего парня, который заботится о Вас, радует и заставляет
+                                    Вас
+                                    улыбаться. Для
+                                    женщины это самое главное❤️
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/Botashka.png" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Ботагоз</h1>
+                                    <p>Золовка</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>Асан-Акерке, поздравляю вас с Бракосочетанием.
+                                    Желаю долгой и счастливой семейной жизни, взаимопонимания, взаимоуважения, пусть все
+                                    планы осуществляются, а мечты иполняются.
+                                    И конечно же любви...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="commentator-main">
+                        <div class="commentator-sec">
+                            <div class="commentator-badge">
+                                <div class="commentator-photo">
+                                    <img src="../images/Incognito.png" alt="">
+                                </div>
+                                <div class="commentator-description">
+                                    <h1>Дорогой</h1>
+                                    <p>гость</p>
+                                </div>
+                            </div>
+                            <div class="commentator-comment">
+                                <p>
+                                    Здесь может быть ваш текст...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- contacts -->
+    <section id="contact" class="container">
+
+        <div class="wrapper">
+            <div class="columns">
+                <div class="cell">
+                    <small>По всем вопросам обращайтесь</small>
+                    <h3>Акерке +7 775 464 08 47</h3>
+                </div>
+            </div>
+
+            <a class="arrow" href="#headline">наверх</a>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- font-family: 'Open Sans', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Roboto', sans-serif; -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

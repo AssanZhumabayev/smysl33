@@ -1,12 +1,9 @@
 ---
 
 - hosts: all
-
-  vars:
-      host: "{{ inventory_hostname }}"
-
+  # vars:
+  #     host: "{{ inventory_hostname }}"
   tasks:
-
     - name: Deadsnakes PPA to get Python 3.11
       apt_repository:
         repo='ppa:deadsnakes/ppa'

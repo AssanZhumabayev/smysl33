@@ -24,8 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if 'DJANGO_DEBUG_FALSE' in os.environ:  
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']  
-    ALLOWED_HOSTS = [os.environ['SITENAME']]  
+    ALLOWED_HOSTS = [os.environ.get('SITENAME', 'localhost')]
 else:
+
+
+
+
+
+    
     DEBUG = True  
     SECRET_KEY = 'insecure-key-for-dev-1dws2dsax32s-wdsclmjd254'
     ALLOWED_HOSTS = []

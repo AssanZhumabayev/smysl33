@@ -1,4 +1,4 @@
-ansible==9.0.1
+ansible
 ansible-core==2.16.0
 asgiref==3.7.2
 attrs==23.1.0
@@ -28,7 +28,7 @@ trio-websocket==0.11.1
 update==0.0.1
 urllib3==2.0.6
 wsproto==1.2.0
-ansible==9.0.1
+ansible
 ansible-core==2.16.0
 asgiref==3.7.2
 attrs==23.1.0
